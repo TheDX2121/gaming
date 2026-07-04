@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>🏆 Tournaments</h1>
+<p>Basic tournament records appear here. Advanced brackets can be expanded later.</p>
+<table><tr><th>Time</th><th>Name</th><th>Status</th></tr>
+{% for t in tournaments %}<tr><td>{{ t.created_at }}</td><td>{{ t.name }}</td><td>{{ t.status }}</td></tr>{% endfor %}
+</table>
+{% endblock %}

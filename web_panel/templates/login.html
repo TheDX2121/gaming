@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Access Terminal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/sci-fi-login.css') }}">
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="login-card">
+    <div class="glow"></div>
+    <h1>⚡ SYSTEM ACCESS</h1>
+    <p>ADMIN TERMINAL // AUTH REQUIRED</p>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}<div class="error">{{ message }}</div>{% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form method="POST" action="/login">
+      <input name="username" placeholder="USERNAME" required>
+      <input name="password" type="password" placeholder="PASSWORD" required>
+      <button type="submit">ENTER SYSTEM</button>
+    </form>
+  </div>
+</body>
+</html>

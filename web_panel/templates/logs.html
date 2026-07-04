@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>📜 Logs</h1>
+<form>
+<select name="type">
+  <option value="">All</option>
+  {% for t in ['coin','shop','game','admin','security','treasury','user'] %}<option value="{{ t }}" {% if type_filter==t %}selected{% endif %}>{{ t }}</option>{% endfor %}
+</select><button>Filter</button>
+</form>
+<table><tr><th>Time</th><th>Type</th><th>Action</th><th>User</th><th>Details</th></tr>
+{% for log in logs %}<tr><td>{{ log.created_at }}</td><td>{{ log.type }}</td><td>{{ log.action }}</td><td>{{ log.user_id }}</td><td><pre>{{ log.details }}</pre></td></tr>{% endfor %}
+</table>
+{% endblock %}

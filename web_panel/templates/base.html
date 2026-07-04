@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaming Bot Admin</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">⚡ GAME CONTROL</div>
+    <a href="/dashboard">📊 Dashboard</a>
+    <a href="/users">👥 Users</a>
+    <a href="/coins">💰 Coins</a>
+    <a href="/treasury">🏦 Treasury</a>
+    <a href="/shop">🛒 Shop</a>
+    <a href="/games">🎮 Games</a>
+    <a href="/tournaments">🏆 Tournaments</a>
+    <a href="/logs">📜 Logs</a>
+    <a href="/settings">⚙️ Settings</a>
+    <a href="/logout">🚪 Logout</a>
+  </aside>
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

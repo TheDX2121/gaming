@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>💰 Coin Management</h1>
+<div class="panel">
+<h2>Add/Remove One User</h2>
+<form method="POST">
+  <input type="hidden" name="mode" value="one_add">
+  <input name="user_id" placeholder="User ID" required>
+  <input name="amount" type="number" placeholder="Amount" required>
+  <input name="reason" placeholder="Reason" required>
+  <button>Add Coins</button>
+</form>
+<form method="POST">
+  <input type="hidden" name="mode" value="one_remove">
+  <input name="user_id" placeholder="User ID" required>
+  <input name="amount" type="number" placeholder="Amount" required>
+  <input name="reason" placeholder="Reason" required>
+  <button>Remove Coins</button>
+</form>
+</div>
+<div class="panel">
+<h2>Add Coins to Everyone</h2>
+<form method="POST">
+  <input type="hidden" name="mode" value="all_add">
+  <input name="amount" type="number" placeholder="Amount" required>
+  <input name="reason" placeholder="Reason" required>
+  <button>Add to All Users</button>
+</form>
+</div>
+{% endblock %}

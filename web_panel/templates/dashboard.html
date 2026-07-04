@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>📊 Dashboard</h1>
+<div class="cards">
+  <div class="card">Users<br><strong>{{ stats.users }}</strong></div>
+  <div class="card">Banned<br><strong>{{ stats.banned }}</strong></div>
+  <div class="card">Treasury<br><strong>{{ stats.treasury }}</strong></div>
+  <div class="card">Logs<br><strong>{{ stats.logs }}</strong></div>
+</div>
+<h2>Top Players</h2>
+<table><tr><th>User</th><th>Coins</th><th>Wins</th></tr>
+{% for u in top %}<tr><td>{{ u.username or u.first_name or u.user_id }}</td><td>{{ u.coins }}</td><td>{{ u.wins }}</td></tr>{% endfor %}
+</table>
+{% endblock %}

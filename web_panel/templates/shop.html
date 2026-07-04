@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>🛒 Shop</h1>
+<table><tr><th>Item</th><th>Category</th><th>Price</th><th>Active</th><th>Save</th></tr>
+{% for item in items %}
+<tr><form method="POST">
+  <td>{{ item.name }}<input type="hidden" name="item_id" value="{{ item.item_id }}"></td>
+  <td>{{ item.category }}</td>
+  <td><input name="price" type="number" value="{{ item.price }}"></td>
+  <td><input name="active" type="checkbox" {% if item.active %}checked{% endif %}></td>
+  <td><button>Save</button></td>
+</form></tr>
+{% endfor %}
+</table>
+{% endblock %}

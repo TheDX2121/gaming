@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>👥 Users</h1>
+<form><input name="q" value="{{ q }}" placeholder="Search user id or username"><button>Search</button></form>
+<table><tr><th>ID</th><th>Name</th><th>Username</th><th>Coins</th><th>Banned</th><th>Action</th></tr>
+{% for u in users %}
+<tr>
+<td>{{ u.user_id }}</td><td>{{ u.first_name }}</td><td>{{ u.username }}</td><td>{{ u.coins }}</td><td>{{ u.banned }}</td>
+<td>
+  {% if u.banned %}<form method="POST" action="/users/{{ u.user_id }}/unban"><button>Unban</button></form>
+  {% else %}<form method="POST" action="/users/{{ u.user_id }}/ban"><button>Ban</button></form>{% endif %}
+</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

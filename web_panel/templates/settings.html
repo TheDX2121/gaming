@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>⚙️ Settings</h1>
+<div class="card">
+<p>Mongo DB name: {{ settings.mongo_db_name }}</p>
+<p>Flask Host: {{ settings.flask_host }}</p>
+<p>Flask Port: {{ settings.flask_port }}</p>
+<p>Debug: {{ settings.flask_debug }}</p>
+</div>
+{% endblock %}

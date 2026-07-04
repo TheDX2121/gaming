@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>🏦 Admin Treasury</h1>
+<div class="cards">
+  <div class="card">Balance<br><strong>{{ treasury.balance }}</strong></div>
+  <div class="card">Total Shop Revenue<br><strong>{{ treasury.total_shop_revenue }}</strong></div>
+</div>
+<h2>Transactions</h2>
+<table><tr><th>Time</th><th>Type</th><th>User</th><th>Amount</th><th>Reason</th></tr>
+{% for t in transactions %}<tr><td>{{ t.created_at }}</td><td>{{ t.type }}</td><td>{{ t.user_id }}</td><td>{{ t.amount }}</td><td>{{ t.reason or t.item_id }}</td></tr>{% endfor %}
+</table>
+{% endblock %}

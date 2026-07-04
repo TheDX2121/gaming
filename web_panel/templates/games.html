@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>🎮 Games</h1>
+<div class="grid-list">
+{% for gid, g in games.items() %}<div class="card"><strong>{{ g.name }}</strong><br><small>{{ gid }}</small><p>{{ g.help }}</p></div>{% endfor %}
+</div>
+{% endblock %}
